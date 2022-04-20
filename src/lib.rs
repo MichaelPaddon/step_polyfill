@@ -296,31 +296,30 @@ mod test {
         test_i32, i32, -1, 1, 2, Some(-2), Some(2);
         test_i64, i64, -1, 1, 2, Some(-2), Some(2);
         test_i128, i128, -1, 1, 2, Some(-2), Some(2);
+        test_isize, isize, -1, 1, 2, Some(-2), Some(2);
         test_u8, u8, 1, 2, 1, Some(0), Some(3);
         test_u16, u16, 1, 2, 1, Some(0), Some(3);
         test_u32, u32, 1, 2, 1, Some(0), Some(3);
         test_u64, u64, 1, 2, 1, Some(0), Some(3);
         test_u128, u128, 1, 2, 1, Some(0), Some(3);
+        test_usize, usize, 1, 2, 1, Some(0), Some(3);
 
-        test_i8_range, i8, i8::MIN, i8::MAX, 0xff as u8, None, None;
-        test_i16_range, i16, i16::MIN, i16::MAX, 0xffff as u16, None, None;
-        test_i32_range, i32, i32::MIN, i32::MAX, 0xffffffff as u32, None, None;
-        test_i64_range, i64, i64::MIN, i64::MAX,
-            0xffffffffffffffff as u64, None, None;
-        test_i128_range, i128, i128::MIN, i128::MAX,
-            0xffffffffffffffffffffffffffffffff as u128, None, None;
-        test_u8_range, u8, u8::MIN, u8::MAX, 0xff as u8, None, None;
-        test_u16_range, u16, u16::MIN, u16::MAX, 0xffff as u16, None, None;
-        test_u32_range, u32, u32::MIN, u32::MAX, 0xffffffff as u32, None, None;
-        test_u64_range, u64, u64::MIN, u64::MAX,
-            0xffffffffffffffff as u64, None, None;
-        test_u128_range, u128, u128::MIN, u128::MAX,
-            0xffffffffffffffffffffffffffffffff as u128, None, None;
+        test_i8_range, i8, i8::MIN, i8::MAX, u8::MAX, None, None;
+        test_i16_range, i16, i16::MIN, i16::MAX, u16::MAX, None, None;
+        test_i32_range, i32, i32::MIN, i32::MAX, u32::MAX, None, None;
+        test_i64_range, i64, i64::MIN, i64::MAX, u64::MAX, None, None;
+        test_i128_range, i128, i128::MIN, i128::MAX, u128::MAX, None, None;
+        test_isize_range, isize, isize::MIN, isize::MAX, usize::MAX, None, None;
+        test_u8_range, u8, u8::MIN, u8::MAX, u8::MAX, None, None;
+        test_u16_range, u16, u16::MIN, u16::MAX, u16::MAX, None, None;
+        test_u32_range, u32, u32::MIN, u32::MAX, u32::MAX, None, None;
+        test_u64_range, u64, u64::MIN, u64::MAX, u64::MAX, None, None;
+        test_u128_range, u128, u128::MIN, u128::MAX, u128::MAX, None, None;
+        test_usize_range, usize, usize::MIN, usize::MAX, usize::MAX, None, None;
 
         test_char_az, char, 'a', 'z', 25, Some('`'), Some('{');
         test_char_hole, char, '\u{d7ff}', '\u{e000}', 1,
             Some('\u{d7fe}'), Some('\u{e001}');
-        test_char_range, char, '\u{0000}', char::MAX, 0x10f7ff as u32,
-            None, None
+        test_char_range, char, '\u{0000}', char::MAX, 0x10f7ff, None, None
     }
 }
