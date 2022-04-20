@@ -1,7 +1,12 @@
 [package]
 name = "step_polyfill"
 version = "0.1.0"
+authors = ["Michael Paddon <michael@paddon.org>"]
 edition = "2021"
+description = "A polyfill for the unstable Rust trait std::iter::Step."
+repository = "https://github.com/MichaelPaddon/step_polyfill"
+license = "MIT OR Apache-2.0"
+keywords = ["step"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
