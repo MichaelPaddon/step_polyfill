@@ -2,6 +2,8 @@
 //!
 //! Developers can use this polyfill with the stable Rust compiler.
 //! It will be obsoleted when [std::iter::Step] is stabilized.
+//!
+//! The API and documentation is copied from the Rust Core Library.
 
 /// Objects that have a notion of *successor* and *predecessor* operations.
 ///
